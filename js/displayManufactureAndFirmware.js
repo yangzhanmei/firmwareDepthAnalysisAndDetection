@@ -22,7 +22,7 @@ function getFirmwareByManufacturer(manufacturer) {
     var firmwareString = "";
     $.each(res, function (index, val) {
         firmwareString += " <div class='firmware'>" +
-            "<a href=''>" + val + "</a>" +
+            "<a href='../view/firmware.html?" + val + "'>" + val + "</a>" +
             "</div>"
     });
     firmwareList.innerHTML = firmwareString;
