@@ -9,13 +9,13 @@
     min-height: 450px;
 }
 
-#right {
+#firmwareList {
     margin-left: 50px;
     border-radius: 1%;
     min-height: 450px;
 }
 
-.firmware{
+.firmware {
     margin-bottom: 20px;
 }
 
