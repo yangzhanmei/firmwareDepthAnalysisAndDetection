@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固件深度分析与检测平台</title>
+    <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="../css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/firmware.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../js/firmware.js"></script>
+</head>
+<body>
+<div id="contanier">
+    <div class="contanier">
+        <div class="row">
+            <div id="logo" class="col-md-1">
+                <img src="../images/logo.jpg">
+            </div>
+            <div id="name" class="col-md-6">
+                固件深度分析与检测平台
+            </div>
+            <div id="search" class="col-md-4">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" placeholder="请输入">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nav">
+        <ul class="list">
+            <li><a href="#">固件样本收集</a></li>
+            <li><a href="#">固件信息识别</a></li>
+            <li><a href="#">固件弱密码暴力破解</a></li>
+            <li><a href="#">固件关联分析</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <hr>
+        <div id="context" class="contanier">
+            <div class="row">
+                <div id="left" class="col-sm-2">
+                    <div id="firmware">
+                        <ul class="menu">
+                            <li>
+                                <a href="#">A1</a>
+                                <ul class="menu1">
+                                    <li><a href="#">A1-1</a></li>
+                                    <li><a href="#">A1-2</a></li>
+                                    <li>
+                                        <a href="#">A1-3</a>
+                                        <ul class="menu2">
+                                            <li><a href="#">A1-3-1</a></li>
+                                            <li><a href="#">A1-3-2</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="firmwareInformation" class="col-sm-9">
+                    <div>
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#general" data-toggle="tab">
+                                    General
+                                </a>
+                            </li>
+                            <li><a href="#contents" data-toggle="tab">Contents</a></li>
+                            <li><a href="#entropy" data-toggle="tab">Entropy</a></li>
+
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="general">
+                                <p>Name DIR655_FW200RUB13Beta06.bin</p>
+                            </div>
+                            <div class="tab-pane fade" id="contents">
+
+                            </div>
+                            <div class="tab-pane fade" id="entropy">
+                                <p>Compressed yes</p>
+                                <p>Encrypted no</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+<div id="footer">
+    <div>固件深度分析与检测平台版权所有</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+#context {
+    margin-top: 3%;
+}
+
+#left {
+    margin-left: 3%;
+    border: 1px solid khaki;
+    border-radius: 5%;
+    min-height: 450px;
+}
+
+#firmwareInformation {
+    margin-left: 50px;
+    border-radius: 1%;
+    min-height: 450px;
+}
+
+.firmware {
+    margin-bottom: 20px;
+}
+
+.manufacturer a {
+    color: slategray;
+    font-size: 13px;
+}
+
+.title {
+    text-align: center;
+}
+
+.fade {
+    margin-top: 30px;
+}
+
+#firmware{
+    margin-top: 30px;
+}
+
+li{
+    list-style:none;
+}
+
+.menu1{
+    margin-left: 20px;
+}
+
+.menu2{
+    margin-left: 20px;
+}
