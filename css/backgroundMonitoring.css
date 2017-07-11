@@ -1,0 +1,28 @@
+#context {
+    margin-top: 3%;
+}
+
+#decompressing {
+    margin-left: 3%;
+    border-radius: 5%;
+    min-height: 450px;
+}
+
+#notDecompressed, #alreadyDecompressed {
+    margin-left: 20px;
+    border-radius: 5%;
+    min-height: 100px;
+    border: 1px solid khaki;
+}
+
+#alreadyDecompressed{
+    margin-top: 40px;
+}
+
+td {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}

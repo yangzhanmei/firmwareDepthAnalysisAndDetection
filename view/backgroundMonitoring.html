@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固件深度分析与检测平台</title>
+    <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="../css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/backgroundMonitoring.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="contanier">
+    <div class="contanier">
+        <div class="row">
+            <div id="logo" class="col-md-1">
+                <img src="../images/logo.jpg">
+            </div>
+            <div id="name" class="col-md-6">
+                固件深度分析与检测平台
+            </div>
+            <div id="search" class="col-md-4">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" placeholder="请输入">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nav">
+        <ul class="list">
+            <li><a href="#">固件样本收集</a></li>
+            <li><a href="#">固件信息识别</a></li>
+            <li><a href="#">固件弱密码暴力破解</a></li>
+            <li><a href="#">固件关联分析</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <hr>
+        <div id="context" class="contanier">
+            <div class="row">
+                <div id="decompressing" class="col-sm-9">
+                    <table class="table table-bordered table-responsive">
+                        <caption>正在解压</caption>
+                        <thead>
+                        <tr>
+                            <th>厂商</th>
+                            <th>固件名</th>
+                            <th>解压节点</th>
+                            <th>PID</th>
+                            <th>解压开始时间</th>
+                            <th>解压持续时间</th>
+                            <th>杀死进程</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>360</td>
+                            <td>DIR655_FW200RUB13Beta06.bin</td>
+                            <td>node1</td>
+                            <td>7989</td>
+                            <td>2017/7/11 10:25</td>
+                            <td>1min5s</td>
+                            <td><img src="../images/delete.png"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="right" class="col-sm-2">
+                    <div id="notDecompressed">
+                        <div class="title"><p><b>未解压</b></p></div>
+                        <hr>
+                        <div class="title">
+                            厂商数：40
+                        </div>
+                    </div>
+                    <div id="alreadyDecompressed">
+                        <div class="title"><p><b>已解压</b></p></div>
+                        <hr>
+                        <div class="title">
+                            厂商数：40
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+<div id="footer">
+    <div>固件深度分析与检测平台版权所有</div>
+</div>
+</body>
+</html>
