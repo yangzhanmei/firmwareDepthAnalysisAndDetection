@@ -1,0 +1,29 @@
+#context {
+    margin-top: 3%;
+}
+
+#left {
+    margin-left: 3%;
+    border: 1px solid khaki;
+    border-radius: 5%;
+    min-height: 450px;
+}
+
+#right {
+    margin-left: 15px;
+    border-radius: 1%;
+    min-height: 450px;
+}
+
+.manufacturer a {
+    color: slategray;
+    font-size: 13px;
+}
+
+.title {
+    text-align: center;
+}
+
+.fade {
+    margin-top: 30px;
+}
