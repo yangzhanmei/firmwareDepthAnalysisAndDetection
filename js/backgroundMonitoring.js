@@ -1,6 +1,7 @@
 function drawAxis() {
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
+    ctx.translate(0.5, 0.5);
     var width = canvas.width;
     var height = canvas.height;
     var padding = 90;        // 坐标轴到canvas边框的边距，留边距写文字
@@ -8,12 +9,12 @@ function drawAxis() {
     ctx.beginPath();
     ctx.lineWidth = 1;
 // y轴线
-    ctx.moveTo(padding + 0.5, height - padding + 0.5);
-    ctx.lineTo(padding + 0.5, padding + 0.5);
+    ctx.moveTo(padding , height - padding );
+    ctx.lineTo(padding , padding );
     ctx.stroke();
 // x轴线
-    ctx.moveTo(padding + 0.5, height - padding + 0.5);
-    ctx.lineTo(width - padding + 0.5, height - padding + 0.5);
+    ctx.moveTo(padding , height - padding );
+    ctx.lineTo(width - padding , height - padding );
     ctx.stroke();
 
     ctx.fillStyle = "red";
