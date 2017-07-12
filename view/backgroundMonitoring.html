@@ -11,6 +11,8 @@
     <link href="../css/common.css" rel="stylesheet" type="text/css"/>
     <link href="../css/nav.css" rel="stylesheet" type="text/css"/>
     <link href="../css/backgroundMonitoring.css" rel="stylesheet" type="text/css"/>
+
+    <script src="../js/backgroundMonitoring.js"></script>
 </head>
 <body>
 <div id="contanier">
@@ -42,7 +44,7 @@
         <hr>
         <div id="context" class="contanier">
             <div class="row">
-                <div id="decompressing" class="col-sm-9">
+                <div id="decompressing" class="col-sm-8">
                     <table class="table table-bordered table-responsive">
                         <caption>正在解压</caption>
                         <thead>
@@ -64,30 +66,104 @@
                             <td>7989</td>
                             <td>2017/7/11 10:25</td>
                             <td>1min5s</td>
-                            <td><img src="../images/delete.png"></td>
+                            <td><a href="#" data-toggle="modal" data-target="#myModal"><img src="../images/delete.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>360</td>
+                            <td>DIR655_FW200RUB13Beta06.bin</td>
+                            <td>node1</td>
+                            <td>7989</td>
+                            <td>2017/7/11 10:25</td>
+                            <td>1min5s</td>
+                            <td><a href="#" data-toggle="modal" data-target="#myModal"><img src="../images/delete.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>360</td>
+                            <td>DIR655_FW200RUB13Beta06.bin</td>
+                            <td>node1</td>
+                            <td>7989</td>
+                            <td>2017/7/11 10:25</td>
+                            <td>1min5s</td>
+                            <td><a href="#" data-toggle="modal" data-target="#myModal"><img src="../images/delete.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>360</td>
+                            <td>DIR655_FW200RUB13Beta06.bin</td>
+                            <td>node1</td>
+                            <td>7989</td>
+                            <td>2017/7/11 10:25</td>
+                            <td>1min5s</td>
+                            <td><a href="#" data-toggle="modal" data-target="#myModal"><img src="../images/delete.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>360</td>
+                            <td>DIR655_FW200RUB13Beta06.bin</td>
+                            <td>node1</td>
+                            <td>7989</td>
+                            <td>2017/7/11 10:25</td>
+                            <td>1min5s</td>
+                            <td><a href="#" data-toggle="modal" data-target="#myModal"><img src="../images/delete.png"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>360</td>
+                            <td>DIR655_FW200RUB13Beta06.bin</td>
+                            <td>node1</td>
+                            <td>7989</td>
+                            <td>2017/7/11 10:25</td>
+                            <td>1min5s</td>
+                            <td><a href="#" data-toggle="modal" data-target="#myModal"><img src="../images/delete.png"></a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-                <div id="right" class="col-sm-2">
-                    <div id="notDecompressed">
-                        <div class="title"><p><b>未解压</b></p></div>
-                        <hr>
-                        <div class="title">
-                            厂商数：40
-                        </div>
+                <div id="right" class="col-sm-3">
+                    <div id="selectManufactureDiv">
+                        <select id="selectManufacture">
+                            <option selected>请选择厂商</option>
+                            <option>360</option>
+                            <option>360</option>
+                        </select>
                     </div>
-                    <div id="alreadyDecompressed">
-                        <div class="title"><p><b>已解压</b></p></div>
-                        <hr>
-                        <div class="title">
-                            厂商数：40
-                        </div>
+                    <div id="chart">
+                        <canvas id="canvas"></canvas>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    是否杀死进程？
+                </h4>
+            </div>
+            <div class="modal-body">
+                <input type="checkbox" id="deleteFirmware"/>
+                <label for="deleteFirmware">同时删除固件</label>
+            </div>
+            <div class="modal-footer">
+                <form id="form">
+                    <button type="submit" class="btn btn-danger">
+                        确定
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <div id="footer">

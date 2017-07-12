@@ -8,21 +8,39 @@
     min-height: 450px;
 }
 
-#notDecompressed, #alreadyDecompressed {
-    margin-left: 20px;
+#canvas {
     border-radius: 5%;
-    min-height: 100px;
+    min-height: 200px;
     border: 1px solid khaki;
+    width: 100%;
 }
 
-#alreadyDecompressed{
-    margin-top: 40px;
-}
-
-td {
+th, td {
     text-align: center;
 }
 
-.title {
+#selectManufactureDiv {
+    min-height: 50px;
+}
+
+#selectManufacture {
+    height: 30px;
+    background-color: white;
+    border-radius: 4%;
+}
+
+#myModalLabel {
     text-align: center;
+}
+
+.modal-body {
+    margin-left: 60%;
+}
+
+#form {
+    text-align: center;
+}
+
+.modal-dialog {
+    width: 30%;
 }
