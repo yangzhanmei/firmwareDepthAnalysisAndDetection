@@ -8,9 +8,15 @@
     min-height: 450px;
 }
 
+#chart{
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
 #canvas {
     border-radius: 5%;
-    min-height: 200px;
+    height: 300px;
     border: 1px solid khaki;
     width: 100%;
 }
@@ -21,6 +27,7 @@ th, td {
 
 #selectManufactureDiv {
     min-height: 50px;
+    margin-left: 11%;
 }
 
 #selectManufacture {

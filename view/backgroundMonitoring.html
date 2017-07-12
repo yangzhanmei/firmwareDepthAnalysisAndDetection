@@ -43,41 +43,37 @@
     <div id="content">
         <hr>
         <div id="context" class="contanier">
-            <div class="row">
-                <div id="decompressing" class="col-sm-8">
-                    <table class="table table-bordered table-responsive">
-                        <caption>正在解压</caption>
-                        <thead>
-                        <tr>
-                            <th>厂商</th>
-                            <th>固件名</th>
-                            <th>解压节点</th>
-                            <th>PID</th>
-                            <th>解压开始时间</th>
-                            <th>解压持续时间</th>
-                            <th>杀死进程</th>
-                        </tr>
-                        </thead>
-                        <tbody id="tbody">
-                        </tbody>
-                    </table>
-                </div>
-                <div id="right" class="col-sm-3">
-                    <div id="selectManufactureDiv">
-                        <select id="selectManufacture">
-                            <option selected>请选择厂商</option>
-                            <option>360</option>
-                            <option>360</option>
-                        </select>
-                    </div>
-                    <div id="chart">
-                        <canvas id="canvas"></canvas>
-                    </div>
-                </div>
+            <div id="selectManufactureDiv">
+                <select id="selectManufacture">
+                    <option selected>请选择厂商</option>
+                    <option>360</option>
+                    <option>360</option>
+                </select>
+            </div>
+            <div id="chart">
+                <canvas id="canvas" width="1600px" height="600px" style="width: 800px;height:300px;"></canvas>
             </div>
         </div>
-        <hr>
+        <div id="decompressing">
+            <table class="table table-bordered table-responsive">
+                <caption>正在解压</caption>
+                <thead>
+                <tr>
+                    <th>厂商</th>
+                    <th>固件名</th>
+                    <th>解压节点</th>
+                    <th>PID</th>
+                    <th>解压开始时间</th>
+                    <th>解压持续时间</th>
+                    <th>杀死进程</th>
+                </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
     </div>
+    <hr>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

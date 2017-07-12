@@ -3,7 +3,7 @@ function drawAxis() {
     var ctx = canvas.getContext('2d');
     var width = canvas.width;
     var height = canvas.height;
-    var padding = 30;        // 坐标轴到canvas边框的边距，留边距写文字
+    var padding = 90;        // 坐标轴到canvas边框的边距，留边距写文字
 
     ctx.beginPath();
     ctx.lineWidth = 1;
@@ -17,18 +17,18 @@ function drawAxis() {
     ctx.stroke();
 
     ctx.fillStyle = "red";
-    ctx.fillRect(width - 2 * padding, 10, 10, 10);
+    ctx.fillRect(width - 2 * padding, 15, 25, 25);
 
     ctx.fillStyle = "black";
-    ctx.font = "10px serif";
-    ctx.fillText("固件数", width - padding - 5, 18);
+    ctx.font = "25px 微软雅黑";
+    ctx.fillText("固件数", width - 1.5 * padding, 30);
 
     ctx.fillStyle = "blue";
-    ctx.fillRect(width - 2 * padding, 25, 10, 10);
+    ctx.fillRect(width - 2 * padding, 45, 25, 25);
 
     ctx.fillStyle = "black";
-    ctx.font = "10px serif";
-    ctx.fillText("已解压", width - padding - 5, 33);
+    ctx.font = "25px 微软雅黑";
+    ctx.fillText("已解压", width - 1.5 * padding, 60);
 
     var xData = getXdata();
     var yFictitious = 100;  //根据所给数据确定大小
@@ -49,7 +49,7 @@ function drawAxis() {
         ctx.moveTo(padding + xlen, height - padding);
         ctx.lineTo(padding + xlen, height - padding + 5);
         ctx.stroke();                                       // 画轴线上的刻度
-        ctx.fillText(xAxis, padding + xlen - xLength / 2, height - padding + 15);   // 填充文字
+        ctx.fillText(xAxis, padding + xlen - xLength / 2, height - padding + 35);   // 填充文字
     }
 // y轴刻度和值
     for (var j = 0; j < yNumber; j++) {
@@ -58,16 +58,16 @@ function drawAxis() {
         ctx.moveTo(padding, height - padding - ylen);
         ctx.lineTo(padding - 5, height - padding - ylen);
         ctx.stroke();
-        ctx.fillText(Yx, padding - 10, height - padding - ylen + 5);
+        ctx.fillText(Yx, padding - 30, height - padding - ylen + 5);
     }
 
     //固件柱状
-    var firmwareList = [100, 200, 300, 400, 400];
+    var firmwareList = [100, 200, 300, 400, 400, 200, 300, 100, 400, 300];
     for (var z = 0; z < firmwareList.length; z++) {
-        var xFirmware = firmwareList[z] / (yFictitious * 5) * yFictitious;
+        var xFirmware = firmwareList[z] / (yFictitious * 5) * yFictitious * 4;
         var yFirmware = height - padding - xFirmware;
         ctx.fillStyle = "red";
-        ctx.fillRect(padding + xLength * (z + 0.25), yFirmware, 10, xFirmware);
+        ctx.fillRect(padding + xLength * (z + 0.25), yFirmware, 25, xFirmware);
         // 保存每个柱状的信息
         firmwareList[z].left = padding + xLength / 4 + xLength * z;
         firmwareList[z].top = yFirmware;
@@ -76,12 +76,12 @@ function drawAxis() {
     }
 
     //已解压柱状
-    var alreadyDecompressedList = [100, 200, 300, 400, 400];
+    var alreadyDecompressedList = [100, 200, 300, 400, 400, 100, 200, 300, 400, 400];
     for (var m = 0; m < alreadyDecompressedList.length; m++) {
-        var xAlDecompressed = alreadyDecompressedList[m] / (yFictitious * 5) * yFictitious;
+        var xAlDecompressed = alreadyDecompressedList[m] / (yFictitious * 5) * yFictitious * 4;
         var yAlDecompressed = height - padding - xAlDecompressed;
         ctx.fillStyle = "blue";
-        ctx.fillRect(padding + xLength * (m + 0.5), yAlDecompressed, 10, xAlDecompressed);
+        ctx.fillRect(padding + xLength * (m + 0.5), yAlDecompressed, 25, xAlDecompressed);
         // 保存每个柱状的信息
         alreadyDecompressedList[m].left = padding + xLength / 4 + xLength * m;
         alreadyDecompressedList[m].top = yAlDecompressed;
@@ -96,7 +96,8 @@ function getXdata() {
     var month = date.getMonth() + 1;
     var day = date.getDate();
     var year = date.getFullYear();
-    for (var i = 0; i < 5; i++) {
+    var number = 10;
+    for (var i = 0; i < number; i++) {
 
         if (day < 1) {
             if (month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
