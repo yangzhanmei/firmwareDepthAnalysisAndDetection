@@ -129,6 +129,53 @@ function getXdata() {
     return Xdata;
 }
 
+
+function a() {
+    var decompressingFirmwareList = ["a", "b", "c", "d", "e", "f", "g"];
+
+    var tbody = document.getElementById("tbody");
+    var tr = "";
+
+    for (var j = 0; j < 6; j++) {
+        var val = decompressingFirmwareList[j];
+        tr += "<tr><td>" + val + "</td>" + "<td>" + val + "</td>" + "<td>" + val + "</td>" +
+            "<td>" + val + "</td>" + "<td>" + val + "</td>" + "<td>" + val + "</td>" +
+            "<td><a href='#' data-toggle='modal' data-target='#myModal'><img src='../images/delete.png'></td></tr>";
+    }
+    tbody.innerHTML = tr;
+
+    var index = 1;
+
+    window.setInterval(function () {
+        getDecompressingFirmware()
+    }, 3000);
+
+    function getDecompressingFirmware() {
+
+        var aList = [];
+        for (var i = index; i < index + 6; i++) {
+            aList.push(decompressingFirmwareList[i]);
+        }
+        if (index + 6 === decompressingFirmwareList.length) {
+            index = 0;
+        }
+        else {
+            index++;
+        }
+        var tbody = document.getElementById("tbody");
+        var tr = "";
+
+        $.each(aList, function (index, val) {
+            tr += "<tr><td>" + val + "</td>" + "<td>" + val + "</td>" + "<td>" + val + "</td>" +
+                "<td>" + val + "</td>" + "<td>" + val + "</td>" + "<td>" + val + "</td>" +
+                "<td><a href='#' data-toggle='modal' data-target='#myModal'><img src='../images/delete.png'></td></tr>";
+        });
+        tbody.innerHTML = tr;
+    }
+
+}
+
 $(function () {
     drawAxis();
+    a();
 });
