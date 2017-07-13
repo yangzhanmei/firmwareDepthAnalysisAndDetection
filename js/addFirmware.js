@@ -1,5 +1,5 @@
 $(function () {
-    $("#submit").hover(function () {
+    $("#submit").click(function () {
         $(".displaySubmit").slideToggle(900);
     });
     $("#close").click(function () {
