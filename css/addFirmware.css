@@ -1,0 +1,25 @@
+#information {
+    text-align: center;
+}
+
+.inforTitle {
+    text-align: center;
+    color: #3fa9f5;
+    font-size: 40px;
+    margin-bottom: 50px;
+    margin-top: 80px;
+}
+
+.input {
+    height: 45px;
+    width: 500px;
+}
+
+.analysis{
+    text-align: center;
+}
+
+.upload-pic{
+    position:absolute;
+    font-size:0;
+}

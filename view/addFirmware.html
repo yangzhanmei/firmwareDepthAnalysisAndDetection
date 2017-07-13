@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固件深度分析与检测平台</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/nav.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/addFirmware.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="contanier">
+    <div class="contanier">
+        <div class="row">
+            <div id="logo" class="col-md-1">
+                <img src="../images/logo.jpg">
+            </div>
+            <div id="name" class="col-md-6">
+                固件深度分析与检测平台
+            </div>
+            <div id="search" class="col-md-4">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" placeholder="请输入">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nav">
+        <ul class="list">
+            <li><a href="#">固件样本收集</a></li>
+            <li><a href="#">固件信息识别</a></li>
+            <li><a href="#">固件弱密码暴力破解</a></li>
+            <li><a href="#">固件关联分析</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <hr>
+        <div class="inforTitle">
+            <span>固件分析</span>
+        </div>
+        <div id="information" style="display: flex;justify-content: center">
+            <div id="centerBlock" style=" height: 250px;width: 630px;">
+                <div class="analysis">
+                    <input type="text" class="input" placeholder="IP、域名、文件">
+                    <span><button class="btn btn-default btn-lg" id="submit"><img
+                            src="../images/上传.png"></button></span>
+                    <span><button class="btn btn-info btn-lg">分析</button></span>
+                </div>
+                <div class="displaySubmit" style="height:150px;border: solid 1px #5bc0de;border-radius: 2%;display: none">
+                    <div style="position: relative;width:158px;height: 43px;border: 1px solid #cacbcc;margin: 0 auto;margin-top: 50px">
+                        <input type="file" class="upload-pic"
+                               style="position:absolute;opacity:0;cursor:pointer;margin-top: 10px;width: 100%;height: 100%">
+                        <span style="width: 30px;height: 40px;display: inline-block;margin-top: 10px;vertical-align:middle"><img src="../images/上传.png"></span>
+                        <span style="width: 60px;height: 40px;display: inline-block;">本地上传</span>
+                    </div>
+                    <div style="text-align: right;margin-top: 20px;margin-right: 20px">
+                        <span style="cursor: pointer"><img src="../images/X.png"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+<div id="footer">
+    <div>固件深度分析与检测平台版权所有</div>
+</div>
+</body>
+</html>
