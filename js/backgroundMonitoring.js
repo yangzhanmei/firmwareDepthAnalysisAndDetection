@@ -1,7 +1,17 @@
 function drawAxis() {
+    var getPixelRatio = function (context) {
+        var backingStore = context.backingStorePixelRatio ||
+            context.webkitBackingStorePixelRatio ||
+            context.mozBackingStorePixelRatio ||
+            context.msBackingStorePixelRatio ||
+            context.oBackingStorePixelRatio ||
+            context.backingStorePixelRatio || 1;
+        return (window.devicePixelRatio || 1) / backingStore;
+    };
+
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
-    ctx.translate(0.5, 0.5);
+    var ratio = getPixelRatio(ctx);
     var width = canvas.width;
     var height = canvas.height;
     var padding = 90;        // 坐标轴到canvas边框的边距，留边距写文字
@@ -9,27 +19,27 @@ function drawAxis() {
     ctx.beginPath();
     ctx.lineWidth = 1;
 // y轴线
-    ctx.moveTo(padding , height - padding );
-    ctx.lineTo(padding , padding );
+    ctx.moveTo(padding * ratio, (height - padding) * ratio);
+    ctx.lineTo(padding * ratio, padding * ratio);
     ctx.stroke();
 // x轴线
-    ctx.moveTo(padding , height - padding );
-    ctx.lineTo(width - padding , height - padding );
+    ctx.moveTo(padding * ratio, (height - padding) * ratio);
+    ctx.lineTo((width - padding) * ratio, (height - padding) * ratio);
     ctx.stroke();
 
     ctx.fillStyle = "red";
-    ctx.fillRect(width - 2 * padding, 15, 25, 25);
+    ctx.fillRect((width - 2 * padding) * ratio, 15 * ratio, 25, 25);
 
     ctx.fillStyle = "black";
     ctx.font = "25px 微软雅黑";
-    ctx.fillText("固件数", width - 1.5 * padding, 30);
+    ctx.fillText("固件数", (width - 1.5 * padding ) * ratio, 30 * ratio);
 
     ctx.fillStyle = "blue";
-    ctx.fillRect(width - 2 * padding, 45, 25, 25);
+    ctx.fillRect((width - 2 * padding) * ratio, 45 * ratio, 25, 25);
 
     ctx.fillStyle = "black";
     ctx.font = "25px 微软雅黑";
-    ctx.fillText("已解压", width - 1.5 * padding, 60);
+    ctx.fillText("已解压", (width - 1.5 * padding) * ratio, 60 * ratio);
 
     var xData = getXdata();
     var yFictitious = 100;  //根据所给数据确定大小
@@ -47,19 +57,19 @@ function drawAxis() {
     for (var i = 0; i < xData.length; i++) {
         var xAxis = xData[i];
         var xlen = xLength * (i + 1);
-        ctx.moveTo(padding + xlen, height - padding);
-        ctx.lineTo(padding + xlen, height - padding + 5);
+        ctx.moveTo((padding + xlen) * ratio, (height - padding) * ratio);
+        ctx.lineTo((padding + xlen) * ratio, (height - padding + 5) * ratio);
         ctx.stroke();                                       // 画轴线上的刻度
-        ctx.fillText(xAxis, padding + xlen - xLength / 2, height - padding + 35);   // 填充文字
+        ctx.fillText(xAxis, (padding + xlen - xLength / 2) * ratio, (height - padding + 35) * ratio);   // 填充文字
     }
 // y轴刻度和值
     for (var j = 0; j < yNumber; j++) {
         var Yx = yFictitious * (j + 1);
         var ylen = yLength * (j + 1);
-        ctx.moveTo(padding, height - padding - ylen);
-        ctx.lineTo(padding - 5, height - padding - ylen);
+        ctx.moveTo(padding * ratio, (height - padding - ylen) * ratio);
+        ctx.lineTo((padding - 5) * ratio, (height - padding - ylen) * ratio);
         ctx.stroke();
-        ctx.fillText(Yx, padding - 30, height - padding - ylen + 5);
+        ctx.fillText(Yx, (padding - 30) * ratio, (height - padding - ylen + 5) * ratio);
     }
 
     //固件柱状
@@ -68,7 +78,7 @@ function drawAxis() {
         var xFirmware = firmwareList[z] / (yFictitious * 5) * yFictitious * 4;
         var yFirmware = height - padding - xFirmware;
         ctx.fillStyle = "red";
-        ctx.fillRect(padding + xLength * (z + 0.25), yFirmware, 25, xFirmware);
+        ctx.fillRect((padding + xLength * (z + 0.25)) * ratio, yFirmware * ratio, 25, xFirmware);
         // 保存每个柱状的信息
         firmwareList[z].left = padding + xLength / 4 + xLength * z;
         firmwareList[z].top = yFirmware;
@@ -82,7 +92,7 @@ function drawAxis() {
         var xAlDecompressed = alreadyDecompressedList[m] / (yFictitious * 5) * yFictitious * 4;
         var yAlDecompressed = height - padding - xAlDecompressed;
         ctx.fillStyle = "blue";
-        ctx.fillRect(padding + xLength * (m + 0.5), yAlDecompressed, 25, xAlDecompressed);
+        ctx.fillRect((padding + xLength * (m + 0.5)) * ratio, yAlDecompressed * ratio, 25, xAlDecompressed);
         // 保存每个柱状的信息
         alreadyDecompressedList[m].left = padding + xLength / 4 + xLength * m;
         alreadyDecompressedList[m].top = yAlDecompressed;
