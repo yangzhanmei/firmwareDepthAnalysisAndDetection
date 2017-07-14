@@ -6,13 +6,17 @@
     margin-left: 3%;
     border: 1px solid khaki;
     border-radius: 5%;
-    min-height: 450px;
+    height: 550px;
+    overflow: scroll;
+    width: 30%;
 }
 
 #firmwareInformation {
     margin-left: 50px;
     border-radius: 1%;
-    min-height: 450px;
+    height: 550px;
+    overflow: hidden;
+    width: 60%;
 }
 
 .firmware {
@@ -32,18 +36,78 @@
     margin-top: 30px;
 }
 
-#firmware{
-    margin-top: 30px;
+li {
+    list-style: none;
 }
 
-li{
-    list-style:none;
+.inlineBlock {
+    display: inline-block;
 }
 
-.menu1{
+.modal-btn {
+    float: right;
+    display: block;
+    font-size: 26px;
+    border: 0;
+    color: #bce8f1;
+}
+
+.modal-btn:hover {
+    color: #bce8f1;
+    background: #ebf3ee;
+}
+
+.modal-btn:nth-child(2) {
+    border-radius: 0;
+}
+
+.modal-dialog {
+    width: 92%;
+}
+
+.modal-header {
+    width: 100%;
+    padding: 0;
+}
+
+.modal-header .modal-title {
+    padding: 15px;
+}
+
+.modal-header:hover {
+    cursor: move;
+}
+
+.modal-body, .modal-footer {
+    min-height: 100px;
+}
+
+.row {
+    width: 98%;
+}
+
+#setBtn {
     margin-left: 20px;
+    margin-top: 20px;
 }
 
-.menu2{
-    margin-left: 20px;
+ul {
+    padding-left: 20px;
+}
+
+.tree-node:hover {
+    cursor: pointer;
+}
+
+.tree-node {
+    width: auto;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+ul li i:first-child {
+    margin: 0 5px;
 }
