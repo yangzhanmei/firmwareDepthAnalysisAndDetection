@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>固件深度分析与检测平台</title>
+    <link rel="icon" href="../images/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
@@ -12,8 +13,8 @@
     <link href="../css/common.css" rel="stylesheet" type="text/css"/>
     <link href="../css/nav.css" rel="stylesheet" type="text/css"/>
     <link href="../css/firmware.css" rel="stylesheet" type="text/css"/>
+    <script src="../js/firmware.js"></script>
 
-    <script src="../js/gujian.js"></script>
 </head>
 <body>
 <div id="contanier">
@@ -83,12 +84,25 @@
     <div>固件深度分析与检测平台版权所有</div>
 </div>
 
-<script src="../js/firmware.js"></script>
 <script>
-    $(document).ready(function () {
-        var json = getFirmware();
-        $('#default_tree').append(loadTree(json));
-        nodeClick($('#default_tree'));
+    $(function () {
+        $.ajax({
+            url: "/api/file/getfiletree/123456",
+            type: "get",
+            dataType: "json",
+            contentType: "application/json;charset=utf-8",
+            xhrFields: {withCredentials: true},
+            success: function (res) {
+                var data = JSON.parse(res.content.message);
+                if (res.status === 0) {
+                    $('#default_tree').append(loadTree(data));
+                    nodeClick($('#default_tree'));
+                }
+                else {
+                    alert("获取失败！");
+                }
+            }
+        })
     })
 </script>
 </body>

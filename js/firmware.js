@@ -26,7 +26,12 @@ function loadTree(tData) {
             // 递归遍历子节点
             loadTree(tData[i].contents).appendTo(li);
         } else {
-            icon.addClass('fa fa-file-text-o');
+            if (tData[i].type === "file") {
+                icon.addClass('fa fa-file-text-o');
+            }
+            else if (tData[i].type === "link") {
+                icon.addClass('fa fa-shield');
+            }
             // 叶子节点新增是否可选
             $('<input>').addClass('candidate').val(tData[i].candidate).css('display', 'none').appendTo(li);
         }
