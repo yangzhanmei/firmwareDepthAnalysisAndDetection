@@ -14,6 +14,7 @@
     <link href="../css/nav.css" rel="stylesheet" type="text/css"/>
     <link href="../css/firmware.css" rel="stylesheet" type="text/css"/>
     <script src="../js/firmware.js"></script>
+    <script src="../js/a.js"></script>
 
 </head>
 <body>
@@ -23,29 +24,29 @@
             <div id="logo" class="col-md-1">
                 <img src="../images/logo.jpg">
             </div>
-            <div id="name" class="col-md-6">
+            <div id="name" class="col-md-10">
                 固件深度分析与检测平台
-            </div>
-            <div id="search" class="col-md-4">
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" placeholder="请输入">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                </div>
             </div>
         </div>
     </div>
     <div id="nav">
         <ul class="list">
-            <li><a href="#">固件样本收集</a></li>
-            <li><a href="#">固件信息识别</a></li>
-            <li><a href="#">固件弱密码暴力破解</a></li>
-            <li><a href="#">固件关联分析</a></li>
+            <li><a href="#" style="color: gray">固件浏览</a></li>
+            <li><a href="passwordViolentCrack.html">弱口令破解</a></li>
+            <li><a href="firmwareAssociationInformation.html">漏洞关联</a></li>
+            <li><a href="backgroundMonitoring.html">固件库管理</a></li>
         </ul>
     </div>
     <div id="content">
         <hr>
         <div id="context" class="contanier">
             <div id="left" class="inlineBlock">
+                <div id="search">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" placeholder="请输入">
+                        <span class="input-group-addon"><a href="#"><span class="glyphicon glyphicon-search"></span></a></span>
+                    </div>
+                </div>
                 <div id="firmware">
                     <div id="default_tree"></div>
                 </div>
@@ -55,23 +56,63 @@
                     <ul id="myTab" class="nav nav-tabs">
                         <li class="active">
                             <a href="#general" data-toggle="tab">
-                                General
+                                基础信息
                             </a>
                         </li>
-                        <li><a href="#contents" data-toggle="tab">Contents</a></li>
-                        <li><a href="#entropy" data-toggle="tab">Entropy</a></li>
+                        <li><a href="#contents" data-toggle="tab">弱口令</a></li>
+                        <li><a href="#entropy" data-toggle="tab">开源组件</a></li>
+                        <li><a href="#loopholes" data-toggle="tab">疑似漏洞</a></li>
 
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="general">
-                            <p>Name DIR655_FW200RUB13Beta06.bin</p>
+                            <table id="table">
+                                <tr>
+                                    <td class="tdTag">固件名</td>
+                                    <td id="firmwareName"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTag">路径</td>
+                                    <td id="firmwarePath"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTag">MD5</td>
+                                    <td id="firmwareMD5"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTag">大小</td>
+                                    <td id="firmwareBig"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTag">操作系统</td>
+                                    <td id="firmwareSystem"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTag">指令集</td>
+                                    <td id="firmwareInstruction"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTag">入库时间</td>
+                                    <td id="firmwareTime"></td>
+                                </tr>
+                            </table>
+                            <div class="tab-list" style="margin-top: 20px;margin-left: 70%">
+                                <button class="btn btn-danger">下载</button>
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="contents">
-
+                            <div>
+                                <span>开源组件搜索</span><span><img src="../images/sousuo.png"></span>
+                            </div>
+                            <div>
+                                <span>etc/passwd、etc/shadow 破解</span><span><img src="../images/yaoshi.png"></span>
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="entropy">
                             <p>Compressed yes</p>
                             <p>Encrypted no</p>
+                        </div>
+                        <div class="tab-pane fade" id="loopholes">
                         </div>
                     </div>
                 </div>
@@ -83,27 +124,5 @@
 <div id="footer">
     <div>固件深度分析与检测平台版权所有</div>
 </div>
-
-<script>
-    $(function () {
-        $.ajax({
-            url: "/api/file/getfiletree/123456",
-            type: "get",
-            dataType: "json",
-            contentType: "application/json;charset=utf-8",
-            xhrFields: {withCredentials: true},
-            success: function (res) {
-                var data = JSON.parse(res.content.message);
-                if (res.status === 0) {
-                    $('#default_tree').append(loadTree(data));
-                    nodeClick($('#default_tree'));
-                }
-                else {
-                    alert("获取失败！");
-                }
-            }
-        })
-    })
-</script>
 </body>
 </html>

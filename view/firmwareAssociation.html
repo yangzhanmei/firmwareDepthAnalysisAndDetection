@@ -34,10 +34,10 @@
     </div>
     <div id="nav">
         <ul class="list">
-            <li><a href="#">固件样本收集</a></li>
-            <li><a href="#">固件信息识别</a></li>
-            <li><a href="#">固件弱密码暴力破解</a></li>
-            <li><a href="#">固件关联分析</a></li>
+            <li><a href="#">固件浏览</a></li>
+            <li><a href="#">弱口令破解</a></li>
+            <li><a href="#" style="color: gray">漏洞关联</a></li>
+            <li><a href="#">固件库管理</a></li>
         </ul>
     </div>
     <div id="content">
@@ -48,7 +48,7 @@
                     <input type="text" id="analysisInput" class="input" placeholder="IP、域名、文件">
                     <span><button class="btn btn-default btn-lg" id="submit"><img
                             src="../images/上传.png"></button></span>
-                    <span><button class="btn btn-default btn-lg">计算指纹</button></span>
+                    <span><button class="btn btn-default btn-lg" data-toggle='modal' data-target='#myModal'>计算指纹</button></span>
                 </div>
                 <div class="displaySubmit">
                     <div style="position: relative;width:158px;height: 43px;border: 1px solid #cacbcc;margin: 0 auto;margin-top: 50px">
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="associationBtn">
-                <button class="btn btn-primary">关联</button>
+                <button class="btn btn-primary" id="assBtn">关联</button>
                 <button class="btn btn-danger">取消关联</button>
             </div>
             <div class="crackProgress">
@@ -77,6 +77,32 @@
             </div>
         </div>
         <hr>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    计算的指纹为：
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p>密码</p>
+            </div>
+            <div class="modal-footer">
+                <form id="form">
+                    <button type="submit" class="btn btn-danger">
+                        复制
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <div id="footer">

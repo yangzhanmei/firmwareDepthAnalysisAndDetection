@@ -111,3 +111,18 @@ a:hover {
 ul li i:first-child {
     margin: 0 5px;
 }
+
+#firmware {
+    margin-top: 10px;
+}
+
+#search {
+    width: 80%;
+    margin-left: 20px;
+}
+
+.tdTag {
+    width: 100px;
+    height: 40px;
+    color: blue;
+}

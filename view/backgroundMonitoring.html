@@ -8,6 +8,10 @@
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+
     <link href="../css/common.css" rel="stylesheet" type="text/css"/>
     <link href="../css/nav.css" rel="stylesheet" type="text/css"/>
     <link href="../css/backgroundMonitoring.css" rel="stylesheet" type="text/css"/>
@@ -21,23 +25,17 @@
             <div id="logo" class="col-md-1">
                 <img src="../images/logo.jpg">
             </div>
-            <div id="name" class="col-md-6">
+            <div id="name" class="col-md-10">
                 固件深度分析与检测平台
-            </div>
-            <div id="search" class="col-md-4">
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" placeholder="请输入">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                </div>
             </div>
         </div>
     </div>
     <div id="nav">
         <ul class="list">
-            <li><a href="#">固件样本收集</a></li>
-            <li><a href="#">固件信息识别</a></li>
-            <li><a href="#">固件弱密码暴力破解</a></li>
-            <li><a href="#">固件关联分析</a></li>
+            <li><a href="firmware.html">固件浏览</a></li>
+            <li><a href="passwordViolentCrack.html">弱口令破解</a></li>
+            <li><a href="firmwareAssociationInformation.html">漏洞关联</a></li>
+            <li><a href="#" style="color: gray">固件库管理</a></li>
         </ul>
     </div>
     <div id="content">
@@ -51,8 +49,10 @@
                 </select>
             </div>
             <div id="chart">
-                <canvas id="canvas" width="1600px" height="600px" style="width: 800px;height:300px;"></canvas>
+                <!--<canvas id="canvas" width="1600px" height="600px" style="width: 800px;height:300px;"></canvas>-->
+                <div id="container" style="min-width:400px;height:400px"></div>
             </div>
+
         </div>
         <div id="decompressing">
             <table class="table table-bordered table-responsive">

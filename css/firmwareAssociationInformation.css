@@ -1,0 +1,93 @@
+#context{
+    min-height: 450px;
+}
+
+#right {
+    margin-left: 5%;
+    border: 1px solid khaki;
+    border-radius: 5%;
+    min-height: 450px;
+}
+
+#firmwareLists{
+    margin-top: 10px;
+    width: 100%;
+    overflow: scroll;
+    min-height: 450px;
+}
+
+li{
+    list-style: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fffeee;
+}
+
+#contaniers {
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+#logo {
+    margin-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#logo img {
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+}
+
+#name {
+    margin-top: 3%;
+    font-size: 2em;
+}
+
+#search {
+    margin-top: 4%;
+}
+
+#content {
+    background-color: white;
+    min-height: 500px;
+}
+
+#footer {
+    text-align: center;
+    height: 100px;
+    background-color: #323436;
+    color:#999;
+    margin-top: 30px;
+}
+
+#selectManufactureDiv {
+    min-height: 50px;
+    margin-top: 20px;
+}
+
+#selectManufacture {
+    height: 30px;
+    background-color: white;
+    border-radius: 4%;
+}
+
+li{
+    margin-bottom: 10px;
+}
+
+a{
+    color: black;
+    margin-left: 5px;
+}
+
+a:hover{
+    text-decoration: none;
+}

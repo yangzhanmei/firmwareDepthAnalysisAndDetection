@@ -53,3 +53,11 @@
     margin-top: 320px;
     width: 45%;
 }
+
+#myModalLabel {
+    text-align: center;
+}
+
+.modal-dialog {
+    width: 30%;
+}
