@@ -9,7 +9,7 @@ function loadTree(tData) {
         var li = $('<li style="width: 250px">').appendTo(ul);
         var node = $('<a style="color: black">').appendTo(li);
         var icon = $('<i>').css('margin-right', '5').appendTo(node);
-        var aTree = $('<a href="#" style="color: black" onclick="fileClick(this.text)">').html(tData[i].name).appendTo(node);
+        var aTree = $('<a href="#" style="color: black">').html(tData[i].name).appendTo(node);
         var input = $('<input>').addClass('field').val(tData[i].name).css({'display': 'none'}).appendTo(node);
 
         // 处理有子节点的
@@ -28,6 +28,7 @@ function loadTree(tData) {
         } else {
             if (tData[i].type === "file") {
                 icon.addClass('fa fa-file-text-o');
+                icon.next().addClass("yeziNode");
             }
             else if (tData[i].type === "link") {
                 icon.addClass('fa fa-shield');
@@ -107,6 +108,9 @@ $(function () {
 //                }
 //            }
 //        })
+    $(".yeziNode").click(function () {
+        fileClick(this.text);
+    });
     $("#firmwareName").html("DIR655_FW200RUB13Beta06.bin");
     $("#firmwarePath").html("/home/firmwares");
     $("#firmwareMD5").html("645c8f12bd2549ad328cfdefc188b190");
