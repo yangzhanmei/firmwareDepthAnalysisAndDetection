@@ -1,0 +1,85 @@
+#content {
+    min-height: 750px;
+}
+
+#context {
+    min-height: 720px;
+}
+
+#left {
+    margin-right: 10px;
+    border: 1px solid khaki;
+    border-radius: 2%;
+}
+
+.demoDiv {
+    width: 100%;
+}
+
+.demo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.box {
+    float: left;
+    width: 88px;
+    height: 68px;
+}
+
+.clear {
+    clear: both;
+}
+
+#center {
+    margin-right: 30px;
+}
+
+#right {
+    border: 1px solid khaki;
+    border-radius: 2%;
+    width: 255px;
+}
+
+.pieChart {
+    display: inline-block;
+    width: 24%;
+    height: 250px;
+}
+
+.manufactureTop {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.centerLineChart {
+    margin-top: 50px;
+}
+
+#lineChart {
+    width: 99%;
+    height: 380px
+}
+
+.top {
+    width: 100%;
+    background-color: black;
+    height: 30px;
+}
+
+.top > li {
+    display: inline-block;
+    width: 60px;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.top > li:hover {
+    cursor: pointer;
+    color: gray;
+}
+
+.leftTitle{
+    text-align: center;
+}
