@@ -1,5 +1,5 @@
 $(function () {
-    $('#container').highcharts({
+    $('#containers').highcharts({
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,

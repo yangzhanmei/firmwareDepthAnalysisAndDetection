@@ -74,49 +74,49 @@ function fileClick(fileName) {
     var str1 = "<li class='active'><a href='#basicInformation' data-toggle='tab'>基础信息</a></li>" +
         "<li><a href='#homologousFirmware' data-toggle='tab'>同源组件</a></li>";
     $("#myTab").html(str1);
-    var str2 = "<div class='tab-pane fade in active' id='basicInformation'><table id='table'>" +
-        "<tr><td class='tdTag'>文件名</td><td> " + fileName + "</td></tr>" +
-        "<tr><td class='tdTag'>路径</td><td>/bin/busybox</td></tr>" +
-        "<tr><td class='tdTag'>MD5</td><td>645c8f12bd2549ad328cfdefc188b190</td></tr>" +
-        "<tr><td class='tdTag'>大小</td> <td>7143450</td></tr>" +
-        "<tr><td class='tdTag'>类型</td>" +
-        "<td>ELF 32-bit MSB executable, version 1 (SYSV), dynamically linked (uses sharedlibs), stripped </td></tr>" +
-        "<tr><td class='tdTag'>操作系统</td><td>Linux</td></tr>" +
-        "<tr><td class='tdTag'>指令集</td><td>32bit MIPS 大端</td></tr></table></div>";
+    var str2 = "<div class='tab-pane fade in active' id='basicInformation'><div id='table'>" +
+        "<div><div class='divTag'>文件名</div><div> " + fileName + "</div></div>" +
+        "<div><div class='divTag'>路径</div><div>/bin/busybox</div></div>" +
+        "<div><div class='divTag'>MD5</div><div>645c8f12bd2549ad328cfdefc188b190</div></div>" +
+        "<div><div class='divTag'>大小</div> <div>7143450</div></div>" +
+        "<div><div class='divTag'>类型</div>" +
+        "<div>ELF 32-bit MSB executable, version 1 (SYSV), dynamically linked (uses sharedlibs), sdivipped </div></div>" +
+        "<div><div class='divTag'>操作系统</div><div>Linux</div></div>" +
+        "<div><div class='divTag'>指令集</div><div>32bit MIPS 大端</div></div></div></div>";
     var div = "<div class='tab-pane fade' id='homologousFirmware'></div>";
 
     $(".tab-content").html(str2 + div);
 }
 
 $(function () {
+    $.ajax({
+        url: "/api/firmware/firmware/getfirmwaretree/596701ad35bd191130442039",
+        type: "get",
+        dataType: "json",
+        contentType: "application/json;charset=utf-8",
+        xhrFields: {withCredentials: true},
+        success: function (res) {
+            var data = JSON.parse(res.content.fileContent);
+            var firmwareName = res.content.firmwareName;
+            var firmwarePath = res.content.firmwarePath;
+            if (res.status === 0) {
+                $('#default_tree').append(loadTree(data));
+                nodeClick($('#default_tree'));
+                $("#firmwareName").html(firmwareName);
+                $("#firmwarePath").html(firmwarePath);
+                $("#firmwareMD5").html("645c8f12bd2549ad328cfdefc188b190");
+                $("#firmwareBig").html("7143450");
+                $("#firmwareSystem").html("Linux");
+                $("#firmwareInstruction").html("32bit MIPS 大端");
+                $("#firmwareTime").html("2017-7-19 T13:12:01");
 
-//        $.ajax({
-//            url: "/api/file/getfiletree/123456",
-//            type: "get",
-//            dataType: "json",
-//            contentType: "application/json;charset=utf-8",
-//            xhrFields: {withCredentials: true},
-//            success: function (res) {
-//                var data = JSON.parse(res.content.message);
-//                if (res.status === 0) {
-    var data = getFirmwareLists();
-    $('#default_tree').append(loadTree(data));
-    nodeClick($('#default_tree'));
-//                }
-//                else {
-//                    alert("获取失败！");
-//                }
-//            }
-//        })
+            }
+            else {
+                alert("获取失败！");
+            }
+        }
+    });
     $(".yeziNode").click(function () {
         fileClick(this.text);
     });
-    $("#firmwareName").html("DIR655_FW200RUB13Beta06.bin");
-    $("#firmwarePath").html("/home/firmwares");
-    $("#firmwareMD5").html("645c8f12bd2549ad328cfdefc188b190");
-    $("#firmwareBig").html("7143450");
-    $("#firmwareSystem").html("Linux");
-    $("#firmwareInstruction").html("32bit MIPS 大端");
-    $("#firmwareTime").html("2017-7-19 T13:12:01");
-
 });

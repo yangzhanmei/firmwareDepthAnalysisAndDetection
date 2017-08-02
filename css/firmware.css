@@ -126,3 +126,11 @@ ul li i:first-child {
     height: 40px;
     color: blue;
 }
+
+.divTag{
+    display: inline-block;
+}
+
+.div{
+    margin-bottom: 20px;
+}
