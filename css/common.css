@@ -47,3 +47,15 @@ body {
     color:#999;
     margin-top: 30px;
 }
+
+input{
+    color: black;
+}
+
+select{
+    color: black;
+}
+
+select option{
+    color: black;
+}

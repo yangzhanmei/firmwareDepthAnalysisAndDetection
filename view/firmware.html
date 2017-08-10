@@ -43,9 +43,16 @@
         <div id="context" class="contanier">
             <div id="left" class="inlineBlock">
                 <div id="search">
-                    <div class="input-group input-group-sm">
-                        <input type="text" class="form-control" placeholder="请输入">
-                        <span class="input-group-addon"><a href="#"><span class="glyphicon glyphicon-search"></span></a></span>
+                    <div class="select">
+                        <select>
+                            <option>厂商</option>
+                            <option>文件</option>
+                            <option>MD5</option>
+                        </select>
+                    </div>
+                    <div class="searchInput">
+                        <input type="text" placeholder="请输入">
+                        <span><a href="#"><span class="glyphicon glyphicon-search"></span></a></span>
                     </div>
                 </div>
                 <div id="firmware">
@@ -69,32 +76,32 @@
                         <div class="tab-pane fade in active" id="general">
                             <div id="table">
                                 <div class="div">
-                                    <div class="divTag">固件名</div>
-                                    <div id="firmwareName" class="divTag"></div>
+                                    <div class="divTag tdTag">固件名</div>
+                                    <div id="firmwareName" class="divTag tdVul"></div>
                                 </div>
                                 <div class="div">
-                                    <div class="divTag">路径</div>
-                                    <div id="firmwarePath" class="divTag"></div>
+                                    <div class="divTag tdTag">路径</div>
+                                    <div id="firmwarePath" class="divTag tdVul"></div>
                                 </div>
                                 <div class="div">
-                                    <div class="divTag">MD5</div>
-                                    <div id="firmwareMD5" class="divTag"></div>
+                                    <div class="divTag tdTag">MD5</div>
+                                    <div id="firmwareMD5" class="divTag tdVul"></div>
                                 </div>
                                 <div class="div">
-                                    <div class="divTag">大小</div>
-                                    <div id="firmwareBig" class="divTag"></div>
+                                    <div class="divTag tdTag">大小</div>
+                                    <div id="firmwareBig" class="divTag tdVul"></div>
                                 </div>
                                 <div class="div">
-                                    <div class="divTag">操作系统</div>
-                                    <div id="firmwareSystem" class="divTag"></div>
+                                    <div class="divTag tdTag">操作系统</div>
+                                    <div id="firmwareSystem" class="divTag tdVul"></div>
                                 </div>
                                 <div class="div">
-                                    <div class="divTag">指令集</div>
-                                    <div id="firmwareInstruction" class="divTag"></div>
+                                    <div class="divTag tdTag">指令集</div>
+                                    <div id="firmwareInstruction" class="divTag tdVul"></div>
                                 </div>
                                 <div class="div">
-                                    <div class="divTag">入库时间</div>
-                                    <div id="firmwareTime" class="divTag"></div>
+                                    <div class="divTag tdTag">入库时间</div>
+                                    <div id="firmwareTime" class="divTag tdVul"></div>
                                 </div>
                             </div>
                             <div class="tab-list" style="margin-top: 20px;margin-left: 70%">

@@ -5,7 +5,6 @@
 #left {
     margin-left: 3%;
     border: 1px solid khaki;
-    border-radius: 5%;
     height: 550px;
     overflow: scroll;
     width: 30%;
@@ -122,15 +121,34 @@ ul li i:first-child {
 }
 
 .tdTag {
-    width: 100px;
+    width: 75px;
     height: 40px;
-    color: blue;
+    color: gray;
+}
+
+.tdVul{
+    width: 80%;
 }
 
 .divTag{
     display: inline-block;
+    margin-right: 1%;
 }
 
 .div{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.select{
+    display: inline-block;
+    color: black;
+}
+
+.select select{
+    background-color: white;
+    height: 24px;
+}
+
+.searchInput{
+    display: inline-block;
 }
