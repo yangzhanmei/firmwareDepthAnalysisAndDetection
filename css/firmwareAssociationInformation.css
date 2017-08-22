@@ -13,7 +13,7 @@
     margin-top: 10px;
     width: 100%;
     overflow: scroll;
-    min-height: 450px;
+    height: 450px;
 }
 
 li{
@@ -52,4 +52,77 @@ a{
 
 a:hover{
     text-decoration: none;
+}
+
+#uploadForm {
+    border: 2px dashed #ccc;
+    height: 100px;
+    /*width: 400px;*/
+    text-align: center;
+}
+
+
+#uploadForm.over {
+    width: 400px;
+    height: 100px;
+    border: 2px dashed red;
+}
+
+#file {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#uploadA {
+    display: inline-block;
+    position: relative;
+    margin-top: 5px;
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#samples{
+    border: solid 1px gray;
+    border-radius: 2%;
+    overflow: hidden;
+    float: left;
+    margin-right: 30px;
+}
+
+#samples{
+    margin-left: 20px;
+    width: 200px;
+    height: 350px;
+}
+
+#samples a{
+    color: gray;
+}
+
+#samples a:hover{
+    color: white;
+}
+
+.sample{
+    width: 200px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.inline{
+    display: inline-block;
+}
+
+#downloadDiv{
+    margin-left: 45%;
 }
